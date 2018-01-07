@@ -3,7 +3,8 @@
 
 ## Emilia Early Preview
 Emilia for Elite Dangerous is still in early development, but here's a preview of whats to come.
-![EMILIA](/EMILIA example screenshot.png?raw=true)
+
+![EMILIA](https://raw.githubusercontent.com/MonsterKiller/EMILIA-Elite-Companion/master/EMILIA%20example%20screenshot.png)
 
 Emilia will be able to track your current missions, materials/data, cargos, location, location history, ranks and more!
 

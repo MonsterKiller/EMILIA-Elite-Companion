@@ -1,0 +1,50 @@
+<div class="elite-box full-height">
+  <div class="flex-stacked-rows">
+    <!-- Header -->
+    <div class="flex-stacked-row-fixed">
+      <div class="elite-box-header button-tabs">
+        <button (click)="changeInventory('cargo')" [class.active]="showingInventory == 'cargo'">Cargo</button>
+        <button (click)="changeInventory('materials')" [class.active]="showingInventory == 'materials'">Materials</button>
+        <button (click)="changeInventory('data')" [class.active]="showingInventory == 'data'">Data</button>
+        <button (click)="toggleFilter()" class="fixed" [class.active]="showingFilter"><span class="icon-filter"></span></button>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="flex-stacked-row-fixed" *ngIf="showingFilter">
+      <div class="elite-box-header elite-list-sort">
+          <div class="flex-row">
+            <div class="flex-column text-left">
+              <button (click)="inventorySort('friendlyName')" class="button-sort" [class.active]="sortInventory === 'friendlyName'" [class.desc]="sortInventoryDir === 'desc'">Name</button>
+            </div>
+            <div class="flex-column-fixed text-right">
+              <button (click)="inventorySort('count')" class="button-sort" [class.active]="sortInventory === 'count'" [class.desc]="sortInventoryDir === 'desc'">Count</button>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Inventory items -->
+    <div class="flex-stacked-row" >
+      <ul class="elite-list elite-material-list" slimScroll [options]="slimscrollOptions">
+        <li *ngFor="let item of inventory | orderBy: sortInventory : sortInventoryDir">
+          <div class="flex-row">
+            <div class="flex-column material-name">{{ item.friendlyName }}</div>
+            <div class="flex-column-fixed">{{ item.count }}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Item counts -->
+    <div class="flex-stacked-row-fixed">
+      <div class="elite-box-footer">
+        <div class="elite-table">
+          <div class="table-row"><div>Cargo</div><div>{{ cargoCount }} / 0</div></div>
+          <div class="table-row"><div>Materials</div><div>{{ materialCount }} / 1,000</div></div>
+          <div class="table-row"><div>Data</div><div>{{ dataCount }} / 500</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+footer,
+header,
+main,
+nav,
+section {
+    display: block;
+}
+
+// Base Stlyes
+* {
+    box-sizing: border-box;
+    text-rendering: geometricPrecision;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    background: #000000;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url(../assets/images/background-1.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: normal;
+    line-height: 1.1;
+    text-align: left;
+    font-family: @font-family;
+    font-size: @font-size;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @text-primary();
+
+    &,
+    & > body {
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        padding: @body-padding;
+
+        & *::selection {
+            @elite-item-hover();
+        }
+
+        > * > .content {
+            height: 100%;
+            @elite-scanline-background();
+            background-color: fade(#0c0b0b, 50%);
+            box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+        }
+
+        // &.overlay-open {
+        //     > * > .content {
+        //         filter: blur(4px);
+        //     }
+        // }
+    }
+}

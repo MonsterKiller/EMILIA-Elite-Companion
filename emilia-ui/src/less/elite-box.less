@@ -1,0 +1,27 @@
+.elite-box {
+    position: relative;
+
+    .elite-box-header {
+        position: relative;
+        text-align: center;
+        font-size: 18px;
+        height: @box-header-height;
+        line-height: @box-header-height;
+        margin-bottom: 2px;
+        background: rgba(0, 0, 0, 0.7);
+        @text-primary();
+
+        .elite-line-bottom();
+    }
+
+    .elite-box-footer {
+        position: relative;
+        background: rgba(0, 0, 0, 0.7);
+
+        .elite-line-top();
+    }
+
+    & + & {
+        margin-top: @content-spacing;
+    }
+}

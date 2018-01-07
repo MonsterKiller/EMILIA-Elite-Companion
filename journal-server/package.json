@@ -1,0 +1,11 @@
+{
+  "name": "elite_journal_server",
+  "version": "0.0.1",
+  "description": "A server to watch for the elite dangerous journal file",
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "express": "^4.15.2",
+    "manakin": "^0.5.1",
+    "socket.io": "^2.0.3"
+  }
+}

@@ -1,0 +1,63 @@
+.elite-list {
+    height: 100%;
+
+    &,
+    > li {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    > li {
+        display: block;
+        overflow: hidden;
+        padding: 10px 20px;
+        line-height: 25px;
+        margin-bottom: 2px;
+        @elite-item();
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            &,
+            & div {
+                @elite-item-hover();
+            }
+        }
+
+        // > .icon {
+        //     float: left;
+        //     width: 70px;
+        //     overflow: hidden;
+        //     margin-right: 15px;  
+        // }
+
+        > .detail {
+            @text-overflow-ellipsis();
+        }
+
+        > .detail-right {
+            float: right;
+            padding-left: 10px;
+        }
+    }
+
+    &.elite-mission-list,
+    &.elite-material-list {
+        > li {
+            .mission-title {
+                @text-dark();
+                @text-overflow-ellipsis();
+            }
+            .mission-location {
+                @text-overflow-ellipsis();
+            }
+            .material-name {
+                @text-overflow-ellipsis();
+            }
+        }
+    }
+}

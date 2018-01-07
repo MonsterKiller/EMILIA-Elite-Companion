@@ -1,0 +1,31 @@
+<div class="elite-box full-height">
+  <div class="flex-stacked-rows">
+    <div class="flex-stacked-row">
+      <div class="elite-box-header">Missions</div>
+      <ul class="elite-list elite-material-list" slimScroll [options]="slimscrollOptions">
+        <li *ngFor="let mission of missions; trackBy trackByFn">
+          <div class="flex-row">
+            <div class="flex-column mission-title">{{ mission.name }}</div>
+            <div class="flex-column-fixed">{{ mission.expiry | timeleft }}</div>
+          </div>
+          <div class="flex-row">
+            <div class="flex-column mission-location" *ngIf="mission.destination">{{ mission.destination.friendly}}</div>
+            <div class="flex-column-fixed">
+              {{ mission.reputation ? 'Rep' + mission.reputation : '' }}
+              {{ mission.influence ? 'Inf' + mission.influence : '' }}
+              {{ mission.credit_reward ? mission.credit_reward.toLocaleString() + ' Credits' : '' }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="flex-stacked-row-fixed">
+      <div class="elite-box-footer">
+        <div class="elite-table">
+          <div class="table-row"><div>Pending Rewards</div><div>{{ pendingRewards }} Credits</div></div>
+          <div class="table-row"><div>Collected Rewards</div><div>{{ collectedRewards }} Credits</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

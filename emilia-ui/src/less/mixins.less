@@ -1,0 +1,103 @@
+// Text colors with shadow
+@text-primary: {
+    color: @color-text;
+    text-shadow: 0 0 15px fade(@color-text, 80%);
+};
+@text-dark: {
+    color: @color-text-dark;
+    text-shadow: 0 0 15px fade(@color-text-dark, 80%);
+};
+@text-red: {
+    color: @color-red;
+    text-shadow: 0 0 15px fade(@color-red, 80%);
+};
+@text-blue: {
+    color: @color-blue;
+    text-shadow: 0 0 15px fade(@color-blue, 80%);
+};
+@text-extradark: {
+    color: @color-item;
+    text-shadow: 0 0 15px fade(@color-item, 80%);
+};
+
+@text-light: {
+    color: @color-light;
+    text-shadow: 0 0 15px fade(@color-light, 80%);
+};
+
+
+// Text
+@text-overflow-ellipsis: {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    overflow: hidden;
+};
+
+// Buttons
+@button-reset: {
+    font-family: @font-family;
+    font-size: @font-size;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    outline-offset: 0;
+    text-decoration: none;
+    text-align: center;
+    background: transparent;
+    color: inherit;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: none;
+    user-select: none;
+};
+
+// Elite styles
+@elite-scanline-background: {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        fade(#2f0803, 35%),
+        fade(#2f0803, 35%) 4px,
+        fade(#000000, 25%) 4px,
+        fade(#000000, 25%) 8px
+    );
+};
+
+@elite-item: {
+    background: fade(@color-item, 75%);
+};
+
+@elite-item-hover: {
+    color: @color-item !important;
+    text-shadow: none !important;
+    background-color: @color-hover !important;
+};
+
+@elite-line-base: {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+};
+
+.elite-line-top() {
+    &:before {
+        @elite-line-base();
+        top: -1px;
+        background: @color-bar-dark;
+        box-shadow: 0px 0px 15px 1px fade(@color-bar-dark, 90%);
+    }
+}
+
+.elite-line-bottom() {
+    &:after {
+        @elite-line-base();
+        bottom: -1px;
+        background: @color-bar-light;
+        box-shadow: 0px 0px 15px 2px fade(@color-bar-light, 90%);
+    }
+}

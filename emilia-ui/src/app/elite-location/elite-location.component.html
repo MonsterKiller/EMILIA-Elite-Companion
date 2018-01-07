@@ -1,0 +1,16 @@
+<div class="elite-box">
+  <div class="flex-stacked-rows">
+    <div class="flex-stacked-row-fixed">
+      <div class="elite-box-header">Location</div>
+    </div>
+    <div class="flex-stacked-row">
+      <div class="elite-table">
+        <div class="table-row"><div>Star System</div><div>{{ location.system ? location.system.name : '' }}</div></div>
+        <div class="table-row"><div>Star Class</div><div>{{ location.system ? location.system.starClass : '' }} <span class="text-dark">({{ location.system ? location.system.scoopable ? 'Scoopable' : 'Un-scoopable' : '' }})</span></div></div>
+        <div class="table-row"><div>System Security</div><div>{{ location.system ? location.system.security : '' }}</div></div>
+        <div class="table-row"><div>System Allegiance</div><div>{{ location.system ? location.system.allegiance : '' }}</div></div>
+        <div class="table-row"><div>Station Name</div><div>{{ location.system ? location.station.name : '' }}</div></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.elite-table {
+    display: table;
+    width: 100%;
+    font-size: 18px;
+
+    > .table-row {
+        position: relative;
+        display: table-row;
+        line-height: 1 !important;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: fade(@color-dark, 75%);
+        }
+
+        &:last-child:after {
+            display: none !important;
+        }
+
+        > div {
+            display: table-cell;
+            text-align: right;
+            padding: 8px 5px;
+
+            &:first-child {
+                @text-dark();
+                text-align: left;
+            }
+        }
+    }
+
+    &.rank-table {
+        > .table-row {
+            // Rank/progress change
+            > div:nth-child(3),
+            > div:nth-child(5) {
+                @text-blue();
+            }
+            // Rank change
+            > div:nth-child(3) {
+                width: 45px;
+            }
+            // Current progress
+            > div:nth-child(4) {
+                width: 70px;
+            }
+            // Progress change
+            > div:nth-child(5) {
+                width: 70px;
+            }
+        }
+    }
+}

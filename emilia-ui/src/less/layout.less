@@ -1,0 +1,90 @@
+.flex-layout-main {
+    display: flex;
+    flex-direction: column;
+
+    > header,
+    > footer {
+        flex: 0 @info-bar-height;
+
+        &.flex-layout-columns {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            > .flex-column {
+                flex: 1;
+            }
+        }
+    }
+
+    > main {
+        flex: 1;
+        margin: 3px 0;
+        position: relative;
+        overflow: hidden;
+
+        > .flex-layout-columns {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+
+            > .flex-column {
+                flex: 1;
+                margin: 0 @content-spacing;
+                position: relative;
+                overflow: hidden;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .flex-stacked-rows {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+
+            > .flex-stacked-row {
+                flex: 1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            > .flex-stacked-row-fixed {
+                flex: 0 auto;
+                overflow: hidden;
+            }
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: relative;
+
+            > .flex-column {
+                flex: 1;
+            }
+            > .flex-column-fixed {
+                flex: 0 auto;
+            }
+
+            > .flex-column,
+            > .flex-column-fixed {
+                margin-left: @content-spacing;
+            }
+
+            > div:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

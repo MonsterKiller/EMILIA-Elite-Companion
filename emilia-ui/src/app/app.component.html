@@ -1,0 +1,82 @@
+<div class="content flex-layout-main">
+  <!-- Top header bar -->
+  <header class="elite-info-bar flex-layout-columns">
+    <div class="flex-column">
+      <!-- Instance Info -->
+      <app-elite-instance></app-elite-instance>
+    </div>
+    <div class="flex-column">
+      <!-- Current ship name -->
+      <app-elite-ship-name></app-elite-ship-name>
+    </div>
+    <div class="flex-column">
+      <!-- Current time -->
+      <app-clock></app-clock>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <!-- 3 column layout -->
+    <div class="flex-layout-columns">
+      <div class="flex-column">
+        <div class="flex-stacked-rows">
+          <div class="flex-stacked-row">
+            <app-elite-location></app-elite-location>
+
+            <div class="elite-box">
+              <div class="flex-stacked-rows">
+                <div class="flex-stacked-row-fixed">
+                  <div class="elite-box-header">Rank</div>
+                </div>
+                <div class="flex-stacked-row">
+                  <div class="elite-table rank-table">
+                    <div class="table-row"><div>Combat</div><div>Monstly Harmless</div><div></div><div>85%</div><div>+22%</div></div>
+                    <div class="table-row"><div>Trade</div><div>Elite</div><div>+1</div><div>100%</div><div></div></div>
+                    <div class="table-row"><div>Explorer</div><div>Scout</div><div></div><div>55%</div><div></div></div>
+                    <div class="table-row"><div>Federation</div><div>Warrant Officer</div><div>+2</div><div>5%</div><div>+5%</div></div>
+                    <div class="table-row"><div>Empire</div><div>Master</div><div></div><div>55%</div><div></div></div>
+                    <div class="table-row"><div>CQC</div><div>Helpless</div><div></div><div>0%</div><div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-stacked-row-fixed">
+            <div class="button-container">
+              <button class="button-elite button-block button-large"><span class="icon icon-wrench"></span>Ship Loadout</button>
+              <button class="button-elite button-block button-large"><span class="icon icon-history"></span>Location History</button>
+              <button class="button-elite button-block button-large"><span class="icon icon-equalizer2"></span>Settings</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-column">
+        <app-elite-inventory></app-elite-inventory>
+      </div>
+
+      <div class="flex-column">
+        <!-- Current accepted missions -->
+        <app-elite-missions></app-elite-missions>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom footer -->
+  <footer class="elite-info-bar flex-layout-columns">
+    <div class="flex-column">
+      <!-- Commander name -->
+      <app-elite-commander></app-elite-commander>
+    </div>
+    <div class="flex-column">
+      <!-- EMILIA info, last update time -->
+      <app-emilia-info></app-emilia-info>
+    </div>
+    <div class="flex-column">
+      <!-- Commander credit balance -->
+      <app-elite-balance></app-elite-balance>
+    </div>
+  </footer>
+</div>

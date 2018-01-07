@@ -1,0 +1,27 @@
+.elite-info-bar {
+    position: relative;
+    height: @info-bar-height;
+    line-height: @info-bar-height;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0 5px !important;
+    z-index: 100;
+    @text-light();
+    // @elite-scanline-background();
+    background-color: fade(#000, 60%);
+
+    .elite-line-top();
+    .elite-line-bottom();
+
+    > div {
+        text-align: center;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
